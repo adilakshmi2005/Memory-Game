@@ -1,0 +1,12 @@
+{
+  "name": "memory-game-frontend",
+  "version": "1.0.0",
+  "description": "Memory Game Frontend",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve ."
+  },
+  "dependencies": {
+    "serve": "^14.0.0"
+  }
+} 

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="particles"></div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1><i class="fas fa-brain"></i> Memory Game</h1>
+            </div>
+            <div class="audio-controls">
+                <button id="bgMusicToggle" class="btn btn-secondary">
+                    <i class="fas fa-music"></i>
+                </button>
+                <button id="soundToggle" class="btn btn-secondary">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+            <div class="user-section">
+                <div id="userInfo" class="hidden">
+                    <span id="username"></span>
+                    <button id="logoutBtn" class="btn btn-danger">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+                <div id="authSection">
+                    <button id="loginBtn" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                    <button id="registerBtn" class="btn btn-success">
+                        <i class="fas fa-user-plus"></i> Register
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-controls glass-effect">
+            <div class="game-settings">
+                <select id="difficultySelect" class="select-styled">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <select id="themeSelect" class="select-styled">
+                    <option value="animals">Animals</option>
+                    <option value="nature">Nature</option>
+                    <option value="sports">Sports</option>
+                </select>
+                <button id="startGame" class="btn btn-primary pulse">
+                    <i class="fas fa-play"></i> Start Game
+                </button>
+            </div>
+            <div id="timer" class="timer">Time: 60s</div>
+        </div>
+
+        <div class="game-board" id="gameBoard"></div>
+
+        <div class="stats-container">
+            <div class="score-section glass-effect">
+                <div class="score-card">
+                    <h2>Current Score</h2>
+                    <span id="currentScore" class="score">0</span>
+                </div>
+                <div class="score-card">
+                    <h2>Best Score</h2>
+                    <span id="bestScore" class="score">0</span>
+                </div>
+            </div>
+
+            <div class="leaderboard glass-effect">
+                <h2><i class="fas fa-trophy"></i> Leaderboard</h2>
+                <div id="leaderboardList" class="leaderboard-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="bgMusic" loop>
+        <source src="assets/sounds/background.mp3" type="audio/mp3">
+    </audio>
+    <audio id="flipSound" src="assets/sounds/flip.wav"></audio>
+    <audio id="matchSound" src="assets/sounds/match.mp3"></audio>
+    <audio id="wrongSound" src="assets/sounds/wrong.wav"></audio>
+    <audio id="winSound" src="assets/sounds/win.mp3"></audio>
+
+    <script src="js/auth.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/leaderboard.js"></script>
+    <script src="js/audio.js"></script>
+</body>
+</html> 

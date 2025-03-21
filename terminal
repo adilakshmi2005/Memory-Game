@@ -1,0 +1,179 @@
+# Create base directories
+mkdir memory-game
+cd memory-game
+
+# Frontend structure
+mkdir -p frontend/js
+mkdir -p frontend/css
+mkdir -p frontend/assets/{animals,nature,movies}
+touch frontend/index.html
+touch frontend/css/styles.css
+touch frontend/js/{game.js,auth.js,leaderboard.js}
+touch frontend/package.json
+
+# Backend structure
+mkdir -p backend/{routes,models}
+touch backend/server.js
+touch backend/routes/{auth.js,game.js,leaderboard.js}
+touch backend/models/{user.js,score.js}
+touch backend/package.json
+
+# Install frontend dependencies
+cd frontend
+npm init -y
+npm install serve
+
+# Install backend dependencies
+cd ../backend
+npm init -y
+npm install express mongoose cors bcrypt jsonwebtoken
+npm install --save-dev nodemon
+
+# To run the application (in separate terminals):
+
+# Terminal 1 - Start MongoDB
+mongod
+
+# Terminal 2 - Start Backend
+cd backend
+npm run dev
+
+# Terminal 3 - Start Frontend
+cd frontend
+npm start
+
+# Create directories if they don't exist
+mkdir -p frontend/assets/{animals,nature,movies}
+
+# Animals theme images needed (add .jpg or .png files):
+cd frontend/assets/animals
+touch dog.jpg
+touch cat.jpg
+touch elephant.jpg
+touch lion.jpg
+touch tiger.jpg
+touch penguin.jpg
+touch giraffe.jpg
+touch zebra.jpg
+
+# Nature theme images needed:
+cd ../nature
+touch mountain.jpg
+touch beach.jpg
+touch forest.jpg
+touch desert.jpg
+touch lake.jpg
+touch waterfall.jpg
+touch volcano.jpg
+touch canyon.jpg
+
+# Movies theme images needed:
+cd ../movies
+touch starwars.jpg
+touch matrix.jpg
+touch avatar.jpg
+touch inception.jpg
+touch titanic.jpg
+touch jaws.jpg
+touch godfather.jpg
+touch alien.jpg
+
+cd frontend/assets
+mkdir -p animals nature movies sports
+
+# In frontend/assets/movies directory
+# Rename downloaded images to match the game requirements
+mv "matrix_poster.jpg" matrix.jpg
+mv "star_wars_poster.jpg" starwars.jpg
+mv "avatar_poster.jpg" avatar.jpg
+mv "inception_poster.jpg" inception.jpg
+mv "titanic_poster.jpg" titanic.jpg
+mv "jaws_poster.jpg" jaws.jpg
+mv "godfather_poster.jpg" godfather.jpg
+mv "alien_poster.jpg" alien.jpg 
+
+# Check if all images are in place
+ls frontend/assets/animals    # Should show 8 images
+ls frontend/assets/nature     # Should show 8 images
+ls frontend/assets/movies     # Should show 8 images 
+
+# Download and save these sports images:
+cd sports
+touch football.jpg    # Soccer/football image
+touch basketball.jpg  # Basketball in action
+touch tennis.jpg      # Tennis racket or court
+touch baseball.jpg    # Baseball or baseball bat
+touch golf.jpg       # Golf course or golf ball
+touch swimming.jpg    # Swimming pool or swimmer
+touch volleyball.jpg  # Volleyball or beach volleyball
+touch cricket.jpg     # Cricket bat or field 
+
+# Navigate to your project root
+cd memory-game
+
+# Go to the assets directory
+cd frontend/assets 
+
+# Create all theme directories
+mkdir animals
+mkdir nature
+mkdir sports 
+
+cd animals
+# Download 8 animal images from Unsplash.com and save them as:
+# dog.jpg
+# cat.jpg
+# elephant.jpg
+# lion.jpg
+# tiger.jpg
+# penguin.jpg
+# giraffe.jpg
+# zebra.jpg 
+
+cd ../nature
+# Download 8 nature images from Unsplash.com and save them as:
+# mountain.jpg
+# beach.jpg
+# forest.jpg
+# desert.jpg
+# lake.jpg
+# waterfall.jpg
+# volcano.jpg
+# canyon.jpg 
+
+cd ../sports
+# Download 8 sports images from Unsplash.com and save them as:
+# football.jpg
+# basketball.jpg
+# tennis.jpg
+# baseball.jpg
+# golf.jpg
+# swimming.jpg
+# volleyball.jpg
+# cricket.jpg 
+
+# Go back to assets directory
+cd ..
+
+# List all directories
+ls
+# Should show:
+# animals  nature  sports 
+
+# Check animals directory
+ls animals
+# Should show all animal images
+
+# Check nature directory
+ls nature
+# Should show all nature images
+
+# Check sports directory
+ls sports
+# Should show all sports images 
+
+# Make sure you're in the memory-game directory
+cd memory-game/frontend/assets
+
+# Create the theme directories
+mkdir -p animals nature sports 
